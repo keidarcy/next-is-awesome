@@ -17,7 +17,6 @@ export default function Home({
       <Head>
         <title>SHOPIFY NOTE</title>
       </Head>
-      nice
     </Layout>
   )
 }

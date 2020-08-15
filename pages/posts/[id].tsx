@@ -1,4 +1,3 @@
-import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData, getSortedPostsData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
@@ -6,6 +5,7 @@ import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from '../../components/CodeBlock'
+import Layout from '../../components/Layout'
 
 export default function Post({
   postData,
