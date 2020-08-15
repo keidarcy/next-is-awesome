@@ -20,13 +20,13 @@ const TopHero = () => (
   </section>
 )
 
-const Layout = ({
+export default function Layout({
   children,
   posts
 }: {
   children: React.ReactNode
   posts: { id: string; title: string; date: string }[]
-}) => {
+}) {
   return (
     <>
       <Header />
@@ -43,5 +43,3 @@ const Layout = ({
     </>
   )
 }
-
-export default Layout
