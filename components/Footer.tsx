@@ -8,8 +8,10 @@ export default function Footer() {
               <div className="grid__item color-white">
                 <p>
                   Built and maintained by{' '}
-                  <a href="https://www.shopify.com">Shopify Inc.</a> © nice Want to
-                  contribute? <a href="https://www.shopify.com/careers">Join the team</a>
+                  <a href="https://blog.xyyolab.com/">{'  '}Xing Yahao.</a>
+                  <br />
+                  Create Note Together?
+                  <a href="https://github.com/keidarcy/nextjs-blog">{'  '}Contact Me.</a>
                 </p>
               </div>
             </div>

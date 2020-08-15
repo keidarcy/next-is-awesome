@@ -6,14 +6,14 @@ const TopHero = () => (
   <section className="section section--tight section-padding section--padding-top-only ui-hero">
     <div className="grid">
       <div className="grid__item">
-        <p className="section-heading__kicker heading--5 hide--mobile">
-          Shopify Open Source
-        </p>
         <h1 className="section-heading__heading heading--2 ui-hero__header gutter-bottom--reset--mobile">
-          Shopify App CLI
+          Darcy's Shopify Notes
         </h1>
+        <p className="section-heading__kicker heading--5 hide--mobile">
+          not shopify offical
+        </p>
         <p className="text-major hide--mobile ui-hero__header">
-          Build Shopify apps faster
+          won't be held responsible for any inaccuracies
         </p>
       </div>
     </div>
@@ -35,7 +35,11 @@ export default function Layout({
         <section id="Content">
           <div className="grid">
             <SideBar posts={posts} />
-            {children}
+            <div className="grid__item grid__item--tablet-up-three-quarters sticky-menu-content">
+              <main role="main" id="Main">
+                {children}
+              </main>
+            </div>
           </div>
         </section>
       </div>

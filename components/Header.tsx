@@ -10,7 +10,7 @@ export default function Header() {
         >
           <div className="marketing-nav__logo color-white">
             <Link href="/">
-              <a className="marketing-nav__logo__shopify">DARCY</a>
+              <a className="marketing-nav__logo__shopify">DARCY' SHOPIFY</a>
             </Link>
           </div>
           <span className="marketing-nav__items display--expanded-nav"></span>
