@@ -5,7 +5,7 @@ import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from '../../components/CodeBlock'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 
 export default function Post({
   postData,
