@@ -1,32 +1,48 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData, getSortedPostsData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import ReactMarkdown from 'react-markdown'
+import CodeBlock from '../../components/CodeBlock'
+import Layout from '../../components/layout'
 
 export default function Post({
-  postData
+  postData,
+  allPostsData
 }: {
   postData: {
+    id: string
     title: string
     date: string
-    contentHtml: string
+    content: string
   }
+  allPostsData: {
+    date: string
+    title: string
+    id: string
+    content: string
+  }[]
 }) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+      <Layout posts={allPostsData}>
+        <div className="grid__item grid__item--tablet-up-three-quarters sticky-menu-content">
+          <main role="main" id="Main">
+            <article>
+              <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+              <div className={utilStyles.lightText}>
+                <Date dateString={postData.date} />
+              </div>
+              <ReactMarkdown source={postData.content} renderers={{ code: CodeBlock }} />
+            </article>
+          </main>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 
@@ -40,9 +56,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id as string)
+  const allPostsData: { id: string; title: string; date: string }[] = getSortedPostsData()
   return {
     props: {
-      postData
+      postData,
+      allPostsData
     }
   }
 }
