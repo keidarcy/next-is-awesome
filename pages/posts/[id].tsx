@@ -30,17 +30,13 @@ export default function Post({
         <title>{postData.title}</title>
       </Head>
       <Layout posts={allPostsData}>
-        <div className="grid__item grid__item--tablet-up-three-quarters sticky-menu-content">
-          <main role="main" id="Main">
-            <article>
-              <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-              <div className={utilStyles.lightText}>
-                <Date dateString={postData.date} />
-              </div>
-              <ReactMarkdown source={postData.content} renderers={{ code: CodeBlock }} />
-            </article>
-          </main>
-        </div>
+        <article>
+          <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+          <div className={utilStyles.lightText}>
+            <Date dateString={postData.date} />
+          </div>
+          <ReactMarkdown source={postData.content} renderers={{ code: CodeBlock }} />
+        </article>
       </Layout>
     </>
   )
